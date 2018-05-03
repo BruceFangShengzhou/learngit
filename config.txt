@@ -1,0 +1,4 @@
+Before using git, you need to configure your git using command:
+git config -- global user.name "user's name"
+git confit -- global user.email "user's email"
+using your own github user name and email to replace the parameter in the command

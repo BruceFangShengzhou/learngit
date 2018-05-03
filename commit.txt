@@ -1,0 +1,3 @@
+Use gedit to edit a file then save it.
+use git add to add this file into the git respitory
+then git commit -m "something you want to say" to commit it.

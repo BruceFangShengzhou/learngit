@@ -1,0 +1,1 @@
+you can use git log to see log of your operations and git reflog to command history to assure going back to which version.

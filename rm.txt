@@ -1,0 +1,3 @@
+rm filename can delete file under this respotory.
+git status you can see see that the git tell you conflict between local files and git files.
+If you want to delete this file in git you can use command git rm filename.

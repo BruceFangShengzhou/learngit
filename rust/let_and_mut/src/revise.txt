@@ -1,0 +1,18 @@
+in rust, variable is unmutable in default, it is not allowed to be changed while executing.
+if you want to change its value, you should change its value by let keyword on purpose.
+
+if you want to have a mutable variable, you could use a mut keyword, such as:
+let mut a = 123;
+a = 456;
+
+if you want to have a constant, you can do this:
+const A: i32 = 234;
+
+RUST supports following integer types:
+8-bit 	i8 for signed	u8 for unsigned
+16-bit	i16 for signed	u16 for unsigned
+32-bit	i32 for signed	u32 for unsigned
+64-bit	i64 for signed	u64 for unsigned
+128-bit i128 for signed	u128 for unsigned
+arch	isize for signed	usize for unsigned
+

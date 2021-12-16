@@ -1,0 +1,9 @@
+1. compile source code which include openssl header files and link libcrypto.so and libssl.so, problems occurs as below:
+    error: storage size of ‘ctrCtx’ isn’t known EVP_CIPHER_CTX ctrCtx;
+2. read software release note and search the same problem in the internet, find that it could be system provided openssl's version does not match the source code's requirement
+   where the source code expected openssl version is OpenSSL 1.0.2g
+3. use command "openssl version" to confirm that system verison is OpenSSL 1.1.1f, we need to compile source code with OpenSSL 1.0.2g to confirm the root cause.
+4. we download OpenSSL 1.0.2g from https://www.linuxfromscratch.org/blfs/view/7.9/postlfs/openssl.html, and compile it sa below:
+   ./config --prefix=/usr --openssldir=/etc/ssl --libdir=lib shared && make
+5. copy the header files under openssl/include to the source code include dir, and compile source code again
+6. it works

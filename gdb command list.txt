@@ -1,0 +1,4 @@
+gdb a.out                   // to start gdb debug a.out
+run argv[1] argv[2] ...     // to run a.out with parameters argv[1] argv[2]
+p /a hash_addr              // print the value of parameter hash_addr in hex format
+x/10uh 0x7ffffffffdffc      // print the memory data in address 0x7ffffffffdffc

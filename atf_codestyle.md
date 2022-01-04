@@ -1,13 +1,10 @@
-[回到主页](/知识分享/RTOS)
-
----
-# RTOS编程规范
+# ATF编程规范
 
 [[_TOC_]]
 
-本规范旨在提高RTOS代码的可维护性、可阅读性，涉及编码过程中的各种命名方式、格式定义等，适用于RTOS软件的编程（C语言）。
+本规范旨在提高ATF代码的可维护性、可阅读性，涉及编码过程中的各种命名方式、格式定义等，适用于ATF Secure Monitor的编程（C语言）。
 规范按照 [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119) 中定义的 IETF 标准使用“_MUST_”、“_MUST NOT_”、“_REQUIRED_”、“_SHALL_”、“_SHALL NOT_”、“_SHOULD_”、“_SHOULD NOT_”、“_RECOMMENDED_”、“_MAY_”和“_OPTIONAL_”字样。
-目前只覆盖ZEKU自研的代码（ZEKU从头开发的代码），对于在外部SDK、库等即有代码上的修改，暂不做强制要求，跟随即有代码风格即可。
+由于ATF参考arm-trusted-firmware实现，故整体代码风格继承ATF开源代码风格，此处仅做简化描述。
 
 
 ## 1	格式

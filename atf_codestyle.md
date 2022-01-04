@@ -1,7 +1,5 @@
 # ATF编程规范
 
-[[_TOC_]]
-
 本规范旨在提高ATF代码的可维护性、可阅读性，涉及编码过程中的各种命名方式、格式定义等，适用于ATF Secure Monitor的编程（C语言）。
 规范按照 [RFC2119](https://datatracker.ietf.org/doc/html/rfc2119) 中定义的 IETF 标准使用“_MUST_”、“_MUST NOT_”、“_REQUIRED_”、“_SHALL_”、“_SHALL NOT_”、“_SHOULD_”、“_SHOULD NOT_”、“_RECOMMENDED_”、“_MAY_”和“_OPTIONAL_”字样。
 由于ATF参考arm-trusted-firmware实现，故整体代码风格继承ATF开源代码风格，此处仅做简化描述。
@@ -9,13 +7,13 @@
 
 ## 1	格式
 ### 1.1	缩进
-必须使用4个空格字符缩进[_MUST_]，不得使用Tab字符[_MUST NOT_]。
+必须使用8个空格字符缩进[_MUST_]，不得使用Tab字符[_MUST NOT_]。
 
 如果你的编辑器是vim，可以在你的.vimrc里添加如下设置：
 ```
-set ts=4
-set sw=4
-set sts=4
+set ts=8
+set sw=8
+set sts=8
 set ai
 set si
 ```

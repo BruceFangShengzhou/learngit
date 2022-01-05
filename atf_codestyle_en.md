@@ -87,16 +87,14 @@ Single spacing should be used around most operators, including:
 A space should also be used to separate parentheses and braces when they are not
 already separated by a newline, such as for the ``if`` statement in the
 following example:
-
-.. code:: c
-
+'''
   int function_foo(bool bar)
   {
       if (bar) {
           function_baz();
       }
   }
-
+'''
 Note that there is no space between the name of a function and the following
 parentheses.
 

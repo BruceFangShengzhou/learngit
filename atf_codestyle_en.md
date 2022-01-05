@@ -11,12 +11,11 @@ and suggestions.
 -  [Chapter 1：File Encoding](#toc_17266_29298_1)
 -  [Chapter 2：Language](#toc_17266_29298_2)
 -  [Chapter 3：C Language Standard](#toc_17266_29298_3)
-
-
+-  [Chapter 4：MISRA Compliance](#toc_17266_29298_4)
+-  [Chapter 5：Indentation](#toc_17266_29298_5)
 
 <span id="toc_17266_29298_1"></span>
 ## Chapter 1: File Encoding
--------------
 
 The source code must use the **UTF-8** character encoding. Comments and
 documentation may use non-ASCII characters when required (e.g. Greek letters
@@ -27,7 +26,6 @@ character is used to break a line and reset to the first column.
 
 <span id="toc_17266_29298_2"></span>
 ## Chapter 2: Language
---------
 
 The primary language for comments and naming must be International English. In
 cases where there is a conflict between the American English and British English
@@ -39,7 +37,6 @@ name should be used as-is.
 
 <span id="toc_17266_29298_3"></span>
 ## Chapter 3: C Language Standard
--------------------
 
 The C language mode used for TF-A is *GNU99*. This is the "GNU dialect of ISO
 C99", which implies the *ISO C99* standard with GNU extensions.
@@ -48,8 +45,8 @@ Both GCC and Clang compiler toolchains have support for *GNU99* mode, though
 Clang does lack support for a small number of GNU extensions. These
 missing extensions are rarely used, however, and should not pose a problem.
 
-MISRA Compliance
-----------------
+<span id="toc_17266_29298_4"></span>
+## Chapter 4: MISRA Compliance
 
 TF-A attempts to comply with the `MISRA C:2012 Guidelines`_. Coverity
 Static Analysis is used to regularly generate a report of current MISRA defects
@@ -65,8 +62,8 @@ comply with them or not. A rationale is given for each deviation.
    Third-party libraries are not considered in our MISRA analysis and we do not
    intend to modify them to make them MISRA compliant.
 
-Indentation
------------
+<span id="toc_17266_29298_5"></span>
+## Chapter 5: Indentation
 
 Use **tabs** for indentation. The use of spaces for indentation is forbidden
 except in the case where a term is being indented to a boundary that cannot be

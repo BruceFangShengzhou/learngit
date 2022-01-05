@@ -4,6 +4,7 @@
 
 -  [Chapter 1：File Encoding](#toc_17266_29298_1)
 -  [Chapter 2：Language](#toc_17266_29298_2)
+-  [Chapter 3：C Language Standard](#toc_17266_29298_3)
 
 The following sections outline the |TF-A| coding style for *C* code. The style
 is based on the `Linux kernel coding style`_, with a few modifications.
@@ -23,7 +24,7 @@ Newlines must be in **Unix** style, which means that only the Line Feed (``LF``)
 character is used to break a line and reset to the first column.
 
 <span id="toc_17266_29298_2"></span>
-## Chapter 1: Language
+## Chapter 2: Language
 --------
 
 The primary language for comments and naming must be International English. In
@@ -34,7 +35,8 @@ Exceptions are made when referring directly to something that does not use
 international style, such as the name of a company. In these cases the existing
 name should be used as-is.
 
-C Language Standard
+<span id="toc_17266_29298_3"></span>
+## Chapter 3: C Language Standard
 -------------------
 
 The C language mode used for TF-A is *GNU99*. This is the "GNU dialect of ISO

@@ -15,7 +15,8 @@ and suggestions.
 -  [Chapter 5：Indentation](#toc_17266_29298_5)
 -  [Chapter 6：Spacing](#toc_17266_29298_6)
 -  [Chapter 7：Line Length](#toc_17266_29298_7)
-
+-  [Chapter 8：Blank Lines](#toc_17266_29298_8)
+-  
 <span id="toc_17266_29298_1"></span>
 ## Chapter 1: File Encoding
 

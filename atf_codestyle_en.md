@@ -1,5 +1,9 @@
-Coding Style
-============
+# ATF Coding Style
+
+## Contents
+
+-  [Chapter 1：File Encoding](#toc_17266_29298_1)
+-  [Chapter 2：Language](#toc_17266_29298_2)
 
 The following sections outline the |TF-A| coding style for *C* code. The style
 is based on the `Linux kernel coding style`_, with a few modifications.
@@ -7,7 +11,8 @@ is based on the `Linux kernel coding style`_, with a few modifications.
 The style should not be considered *set in stone*. Feel free to provide feedback
 and suggestions.
 
-File Encoding
+<span id="toc_17266_29298_1"></span>
+## Chapter 1: File Encoding
 -------------
 
 The source code must use the **UTF-8** character encoding. Comments and

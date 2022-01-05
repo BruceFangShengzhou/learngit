@@ -1,7 +1,7 @@
 # ATF Coding Style
 
 The following sections outline the |TF-A| coding style for *C* code. The style
-is based on the `Linux kernel coding style`_, with a few modifications.
+is based on the [Linux kernel coding style](https://www.kernel.org/doc/html/v4.10/process/coding-style.html), with a few modifications.
 
 The style should not be considered *set in stone*. Feel free to provide feedback
 and suggestions.

@@ -145,16 +145,15 @@ This style applies to all blocks except for functions which, following the Linux
 style, do place the opening brace on a new line.
 
 Example for a function:
-'''
-
-  int my_function(void)
-  {
+   ``` code c
+   int my_function(void)
+   {
       int a;
 
       a = 1;
       return a;
-  }
-
+   }
+   ```
 ### Conditional Statement Bodies
 
 Where conditional statements (such as 'if', ``for``, ``while`` and ``do``) are
@@ -166,19 +165,17 @@ body.
   adopted to follow MISRA guidelines more closely and to help prevent errors.
 
 For example, use the following style:
-'''
-
-  if (condition) {
+   ``` code c
+   if (condition) {
       foo++;
-  }
-
+   }
+   ```
 instead of omitting the optional braces around a single statement:
-'''
-
-  /* This is violating MISRA C 2012: Rule 15.6 */
-  if (condition)
+   ``` code c
+   /* This is violating MISRA C 2012: Rule 15.6 */
+   if (condition)
       foo++;
-
+   ```
 The reason for this is to prevent accidental changes to control flow when
 modifying the body of the conditional. For example, at a quick glance it is easy
 to think that the value of ``bar`` is only incremented if ``condition``
@@ -186,13 +183,13 @@ evaluates to ``true`` but this is not the case - ``bar`` will always be
 incremented regardless of the condition evaluation. If the developer forgets to
 add braces around the conditional body when adding the ``bar++;`` statement then
 the program execution will not proceed as intended.
-'''
 
-  /* This is violating MISRA C 2012: Rule 15.6 */
-  if (condition)
+   ``` code c
+   /* This is violating MISRA C 2012: Rule 15.6 */
+   if (condition)
       foo++;
       bar++;
-
+   ```
 <span id="toc_17266_29298_10"></span>
 ## Chapter 10: Naming
 
@@ -201,29 +198,30 @@ the program execution will not proceed as intended.
 Use lowercase for function names, separating multiple words with an underscore
 character (``_``). This is sometimes referred to as *Snake Case*. An example is
 given below:
-'''
 
-  void bl2_arch_setup(void)
-  {
+   ``` code c
+   void bl2_arch_setup(void)
+   {
       ...
-  }
+   }
+   ```
 
 ### Local Variables and Parameters
 
 Local variables and function parameters use the same format as function names:
 lowercase with underscore separation between multiple words. An example is
 given below:
-'''
-
-  static void set_scr_el3_from_rm(uint32_t type,
+   ``` code c
+   static void set_scr_el3_from_rm(uint32_t type,
                                   uint32_t interrupt_type_flags,
                                   uint32_t security_state)
-  {
+   {
       uint32_t flag, bit_pos;
 
       ...
 
-  }
+   }
+   ```
 
 ### Preprocessor Macros
 
@@ -238,9 +236,10 @@ uppercase text.
 
 Place any function attributes after the function type and before the function
 name.
-'''
 
+   ``` code c
    void __init plat_arm_interconnect_init(void);
+   ```
 
 <span id="toc_17266_29298_12"></span>
 ## Chapter 12: Alignment
@@ -255,8 +254,7 @@ spaces to indent text by ten columns.
 When using ``switch`` statements, align each ``case`` statement with the
 ``switch`` so that they are in the same column.
 
-.. code:: c
-
+   ``` code c
   switch (condition) {
   case A:
       foo();
@@ -265,6 +263,7 @@ When using ``switch`` statements, align each ``case`` statement with the
   default:
       baz();
   }
+  ```
 
 ### Pointer Alignment
 
@@ -272,20 +271,19 @@ The reference and dereference operators (ampersand and *pointer star*) must be
 aligned with the name of the object on which they are operating, as opposed to
 the type of the object.
 
-.. code:: c
+   ``` code c
+   uint8_t *foo;
 
-  uint8_t *foo;
-
-  foo = &bar;
-
+   foo = &bar;
+   ```
 
 <span id="toc_17266_29298_13"></span>
 ## Chapter 13: Comments
 
 The general rule for comments is that the double-slash style of comment (``//``)
 is not allowed. Examples of the allowed comment formats are shown below:
-'''
-
+   
+   ``` code c
   /*
    * This example illustrates the first allowed style for multi-line comments.
    *
@@ -293,8 +291,8 @@ is not allowed. Examples of the allowed comment formats are shown below:
    * they separate multiple contexts.
    *
    */
+   ```
 
-'''
 
   /**************************************************************************
    * This is the second allowed style for multi-line comments.

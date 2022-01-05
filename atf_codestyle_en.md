@@ -51,12 +51,12 @@ missing extensions are rarely used, however, and should not pose a problem.
 <span id="toc_17266_29298_4"></span>
 ## Chapter 4: MISRA Compliance
 
-TF-A attempts to comply with the `MISRA C:2012 Guidelines`_. Coverity
-Static Analysis is used to regularly generate a report of current MISRA defects
+TF-A attempts to comply with the [MISRA C:2012 Guidelines](https://www.misra.org.uk/misra-c/).
+Coverity Static Analysis is used to regularly generate a report of current MISRA defects
 and to prevent the addition of new ones.
 
 It is not possible for the project to follow all MISRA guidelines. We maintain
-`a spreadsheet`_ that lists all rules and directives and whether we aim to
+a spreadsheet that lists all rules and directives and whether we aim to
 comply with them or not. A rationale is given for each deviation.
 
    Enforcing a rule does not mean that the codebase is free of defects
@@ -115,8 +115,8 @@ This rule is a *should*, not a must, and it is acceptable to exceed the limit
 **slightly** where the readability of the code would otherwise be significantly
 reduced. Use your judgement in these cases.
 
-Blank Lines
------------
+<span id="toc_17266_29298_8"></span>
+## Chapter 8: Blank Lines
 
 Functions are usually separated by a single blank line. In certain cases it is
 acceptable to use additional blank lines for clarity, if required.
@@ -125,27 +125,28 @@ The file must end with a single newline character. Many editors have the option
 to insert this automatically and to trim multiple blank lines at the end of the
 file.
 
-Braces
-------
+<span id="toc_17266_29298_9"></span>
+## Chapter 9: Braces
 
-Opening Brace Placement
-^^^^^^^^^^^^^^^^^^^^^^^
+
+### Opening Brace Placement
 
 Braces follow the **Kernighan and Ritchie (K&R)** style, where the opening brace
 is **not** placed on a new line.
 
-Example for a ``while`` loop:
-
+Example for a 'while' loop:
 '''
+
    while (condition) {
       foo();
       bar();
    }
-'''
+
 This style applies to all blocks except for functions which, following the Linux
-style, **do** place the opening brace on a new line.
+style, do place the opening brace on a new line.
 
 Example for a function:
+'''
 
   int my_function(void)
   {
@@ -155,29 +156,25 @@ Example for a function:
       return a;
   }
 
-Conditional Statement Bodies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Conditional Statement Bodies
 
-Where conditional statements (such as ``if``, ``for``, ``while`` and ``do``) are
+Where conditional statements (such as 'if', ``for``, ``while`` and ``do``) are
 used, braces must be placed around the statements that form the body of the
 conditional. This is the case regardless of the number of statements in the
 body.
 
-.. note::
   This is a notable departure from the Linux coding style that has been
   adopted to follow MISRA guidelines more closely and to help prevent errors.
 
 For example, use the following style:
-
-.. code:: c
+'''
 
   if (condition) {
       foo++;
   }
 
 instead of omitting the optional braces around a single statement:
-
-.. code:: c
+'''
 
   /* This is violating MISRA C 2012: Rule 15.6 */
   if (condition)
@@ -190,39 +187,34 @@ evaluates to ``true`` but this is not the case - ``bar`` will always be
 incremented regardless of the condition evaluation. If the developer forgets to
 add braces around the conditional body when adding the ``bar++;`` statement then
 the program execution will not proceed as intended.
-
-.. code:: c
+'''
 
   /* This is violating MISRA C 2012: Rule 15.6 */
   if (condition)
       foo++;
       bar++;
 
-Naming
-------
+<span id="toc_17266_29298_10"></span>
+## Chapter 10: Naming
 
-Functions
-^^^^^^^^^
+### Functions
 
 Use lowercase for function names, separating multiple words with an underscore
 character (``_``). This is sometimes referred to as *Snake Case*. An example is
 given below:
-
-.. code:: c
+'''
 
   void bl2_arch_setup(void)
   {
       ...
   }
 
-Local Variables and Parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Local Variables and Parameters
 
 Local variables and function parameters use the same format as function names:
 lowercase with underscore separation between multiple words. An example is
 given below:
-
-.. code:: c
+'''
 
   static void set_scr_el3_from_rm(uint32_t type,
                                   uint32_t interrupt_type_flags,
@@ -234,36 +226,32 @@ given below:
 
   }
 
-Preprocessor Macros
-^^^^^^^^^^^^^^^^^^^
+### Preprocessor Macros
 
 Identifiers that are defined using preprocessor macros are written in all
 uppercase text.
-
-.. code:: c
+'''
 
   #define BUFFER_SIZE_BYTES 64
 
-Function Attributes
--------------------
+<span id="toc_17266_29298_11"></span>
+## Chapter 11: Function Attributes
 
 Place any function attributes after the function type and before the function
 name.
-
-.. code:: c
+'''
 
    void __init plat_arm_interconnect_init(void);
 
-Alignment
----------
+<span id="toc_17266_29298_12"></span>
+## Chapter 12: Alignment
 
 Alignment should be performed primarily with tabs, adding spaces if required to
 achieve a granularity that is smaller than the tab size. For example, with a tab
 size of eight columns it would be necessary to use one tab character and two
 spaces to indent text by ten columns.
 
-Switch Statement Alignment
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Switch Statement Alignment
 
 When using ``switch`` statements, align each ``case`` statement with the
 ``switch`` so that they are in the same column.
@@ -279,8 +267,7 @@ When using ``switch`` statements, align each ``case`` statement with the
       baz();
   }
 
-Pointer Alignment
-^^^^^^^^^^^^^^^^^
+### Pointer Alignment
 
 The reference and dereference operators (ampersand and *pointer star*) must be
 aligned with the name of the object on which they are operating, as opposed to
@@ -293,13 +280,12 @@ the type of the object.
   foo = &bar;
 
 
-Comments
---------
+<span id="toc_17266_29298_13"></span>
+## Chapter 13: Comments
 
 The general rule for comments is that the double-slash style of comment (``//``)
 is not allowed. Examples of the allowed comment formats are shown below:
-
-.. code:: c
+'''
 
   /*
    * This example illustrates the first allowed style for multi-line comments.
@@ -309,7 +295,7 @@ is not allowed. Examples of the allowed comment formats are shown below:
    *
    */
 
-.. code:: c
+'''
 
   /**************************************************************************
    * This is the second allowed style for multi-line comments.
@@ -321,25 +307,24 @@ is not allowed. Examples of the allowed comment formats are shown below:
    *
    *************************************************************************/
 
-.. code:: c
+'''
 
   /* Single line comments can use this format */
 
-.. code:: c
+'''
 
   /***************************************************************************
    * This alternative single-line comment style can also be used for emphasis.
    **************************************************************************/
 
-Headers and inclusion
+<span id="toc_17266_29298_14"></span>
+## Chapter 14: Headers and inclusion
 ---------------------
 
-Header guards
-^^^^^^^^^^^^^
+### Header guards
 
 For a header file called "some_driver.h" the style used by |TF-A| is:
-
-.. code:: c
+'''
 
   #ifndef SOME_DRIVER_H
   #define SOME_DRIVER_H
@@ -348,8 +333,7 @@ For a header file called "some_driver.h" the style used by |TF-A| is:
 
   #endif /* SOME_DRIVER_H */
 
-Include statement ordering
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Include statement ordering
 
 All header files that are included by a source file must use the following,
 grouped ordering. This is to improve readability (by making it easier to quickly
@@ -372,8 +356,7 @@ Groups must be separated by a single blank line for clarity.
 
 The example below illustrates the ordering rules using some contrived header
 file names; this type of name reuse should be otherwise avoided.
-
-.. code:: c
+'''
 
   #include <string.h>
 
@@ -384,8 +367,7 @@ file names; this type of name reuse should be otherwise avoided.
 
   #include "a_header.h"
 
-Include statement variants
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Include statement variants
 
 Two variants of the ``#include`` directive are acceptable in the |TF-A|
 codebase. Correct use of the two styles improves readability by suggesting the
@@ -408,15 +390,13 @@ Example (bl1_fwu.c):
 
   #include "bl1_private.h"
 
-Typedefs
---------
+<span id="toc_17266_29298_15"></span>
+## Chapter 15: Typedefs
 
-Avoid anonymous typedefs of structs/enums in headers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+### Avoid anonymous typedefs of structs/enums in headers
 
 For example, the following definition:
-
-.. code:: c
+'''
 
   typedef struct {
           int arg1;
@@ -425,8 +405,7 @@ For example, the following definition:
 
 
 is better written as:
-
-.. code:: c
+'''
 
   struct my_struct {
           int arg1;
@@ -436,15 +415,13 @@ is better written as:
 This allows function declarations in other header files that depend on the
 struct/enum to forward declare the struct/enum instead of including the
 entire header:
-
-.. code:: c
+'''
 
   struct my_struct;
   void my_func(struct my_struct *arg);
 
 instead of:
-
-.. code:: c
+'''
 
   #include <my_struct.h>
   void my_func(my_struct_t *arg);
@@ -459,10 +436,10 @@ a warning for this.
 
 Existing typedefs will be retained for compatibility.
 
---------------
+
 
 *Copyright (c) 2020, Arm Limited. All rights reserved.*
 
-.. _`Linux kernel coding style`: https://www.kernel.org/doc/html/latest/process/coding-style.html
-.. _`MISRA C:2012 Guidelines`: https://www.misra.org.uk/Activities/MISRAC/tabid/160/Default.aspx
-.. _`a spreadsheet`: https://developer.trustedfirmware.org/file/download/lamajxif3w7c4mpjeoo5/PHID-FILE-fp7c7acszn6vliqomyhn/MISRA-and-TF-Analysis-v1.3.ods
+[Linux kernel coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html)
+[MISRA C:2012 Guidelines](https://www.misra.org.uk/Activities/MISRAC/tabid/160/Default.aspx)
+[a spreadsheet](https://developer.trustedfirmware.org/file/download/lamajxif3w7c4mpjeoo5/PHID-FILE-fp7c7acszn6vliqomyhn/MISRA-and-TF-Analysis-v1.3.ods)

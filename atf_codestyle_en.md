@@ -13,6 +13,7 @@ and suggestions.
 -  [Chapter 3：C Language Standard](#toc_17266_29298_3)
 -  [Chapter 4：MISRA Compliance](#toc_17266_29298_4)
 -  [Chapter 5：Indentation](#toc_17266_29298_5)
+-  [Chapter 6：Spacing](#toc_17266_29298_6)
 
 <span id="toc_17266_29298_1"></span>
 ## Chapter 1: File Encoding
@@ -73,7 +74,8 @@ Tab spacing should be set to **8 characters**.
 
 Trailing whitespace is not allowed and must be trimmed.
 
-Spacing
+<span id="toc_17266_29298_6"></span>
+## Chapter 6: Spacing
 -------
 
 Single spacing should be used around most operators, including:

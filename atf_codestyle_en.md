@@ -7,10 +7,6 @@ is based on the `Linux kernel coding style`_, with a few modifications.
 The style should not be considered *set in stone*. Feel free to provide feedback
 and suggestions.
 
-.. note::
-   You will almost certainly find code in the |TF-A| repository that does not
-   follow the style. The intent is for all code to do so eventually.
-
 File Encoding
 -------------
 

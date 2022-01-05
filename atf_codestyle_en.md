@@ -96,7 +96,6 @@ following example:
              function_baz();
          }
      }
-'''
 
 Note that there is no space between the name of a function and the following
 parentheses.
@@ -107,7 +106,6 @@ example illustrates this for an ``if`` statement.
 
 <span id="toc_17266_29298_7"></span>
 ## Chapter 7: Line Length
------------
 
 Line length *should* be at most **80 characters**. This limit does not include
 non-printing characters such as the line feed.

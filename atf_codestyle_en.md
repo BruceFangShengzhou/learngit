@@ -16,7 +16,10 @@ and suggestions.
 -  [Chapter 6：Spacing](#toc_17266_29298_6)
 -  [Chapter 7：Line Length](#toc_17266_29298_7)
 -  [Chapter 8：Blank Lines](#toc_17266_29298_8)
--  
+-  [Chapter 9：Braces](#toc_17266_29298_9)
+-  [Chapter 10：Naming](#toc_17266_29298_10)
+-  [Chapter 11：Function Attributes](#toc_17266_29298_11)
+
 <span id="toc_17266_29298_1"></span>
 ## Chapter 1: File Encoding
 

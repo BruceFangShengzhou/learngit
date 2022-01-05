@@ -76,7 +76,6 @@ Trailing whitespace is not allowed and must be trimmed.
 
 <span id="toc_17266_29298_6"></span>
 ## Chapter 6: Spacing
--------
 
 Single spacing should be used around most operators, including:
 

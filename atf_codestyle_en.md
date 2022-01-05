@@ -14,6 +14,7 @@ and suggestions.
 -  [Chapter 4：MISRA Compliance](#toc_17266_29298_4)
 -  [Chapter 5：Indentation](#toc_17266_29298_5)
 -  [Chapter 6：Spacing](#toc_17266_29298_6)
+-  [Chapter 7: Line Length](#toc_17266_29298_7)
 
 <span id="toc_17266_29298_1"></span>
 ## Chapter 1: File Encoding
@@ -88,12 +89,13 @@ A space should also be used to separate parentheses and braces when they are not
 already separated by a newline, such as for the ``if`` statement in the
 following example:
 '''
-  int function_foo(bool bar)
-  {
-      if (bar) {
-          function_baz();
-      }
-  }
+
+     int function_foo(bool bar)
+     {
+         if (bar) {
+             function_baz();
+         }
+     }
 '''
 Note that there is no space between the name of a function and the following
 parentheses.
@@ -102,7 +104,8 @@ Control statements (``if``, ``for``, ``switch``, ``while``, etc) must be
 separated from the following open parenthesis by a single space. The previous
 example illustrates this for an ``if`` statement.
 
-Line Length
+<span id="toc_17266_29298_7"></span>
+## Chapter 7: Line Length
 -----------
 
 Line length *should* be at most **80 characters**. This limit does not include

@@ -22,7 +22,8 @@ used for units) but code itself is still limited to ASCII characters.
 Newlines must be in **Unix** style, which means that only the Line Feed (``LF``)
 character is used to break a line and reset to the first column.
 
-Language
+<span id="toc_17266_29298_2"></span>
+## Chapter 1: Language
 --------
 
 The primary language for comments and naming must be International English. In

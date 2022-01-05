@@ -97,6 +97,7 @@ following example:
          }
      }
 '''
+
 Note that there is no space between the name of a function and the following
 parentheses.
 
@@ -135,12 +136,13 @@ Braces follow the **Kernighan and Ritchie (K&R)** style, where the opening brace
 is **not** placed on a new line.
 
 Example for a ``while`` loop:
-'
+
+'''
    while (condition) {
       foo();
       bar();
    }
-'
+'''
 This style applies to all blocks except for functions which, following the Linux
 style, **do** place the opening brace on a new line.
 

@@ -38,8 +38,6 @@ Both GCC and Clang compiler toolchains have support for *GNU99* mode, though
 Clang does lack support for a small number of GNU extensions. These
 missing extensions are rarely used, however, and should not pose a problem.
 
-.. _misra-compliance:
-
 MISRA Compliance
 ----------------
 
@@ -51,11 +49,9 @@ It is not possible for the project to follow all MISRA guidelines. We maintain
 `a spreadsheet`_ that lists all rules and directives and whether we aim to
 comply with them or not. A rationale is given for each deviation.
 
-.. note::
    Enforcing a rule does not mean that the codebase is free of defects
    of that rule, only that they would ideally be removed.
 
-.. note::
    Third-party libraries are not considered in our MISRA analysis and we do not
    intend to modify them to make them MISRA compliant.
 

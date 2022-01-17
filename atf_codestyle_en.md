@@ -1,6 +1,6 @@
 # ATF Coding Style
 
-The following sections outline the |TF-A| coding style for *C* code. The style
+The following sections outline the ATF coding style for **C** code. The style
 is based on the [Linux kernel coding style](https://www.kernel.org/doc/html/v4.10/process/coding-style.html), with a few modifications.
 
 The style should not be considered *set in stone*. Feel free to provide feedback
@@ -19,10 +19,14 @@ and suggestions.
 -  [Chapter 9：Braces](#toc_17266_29298_9)
 -  [Chapter 10：Naming](#toc_17266_29298_10)
 -  [Chapter 11：Function Attributes](#toc_17266_29298_11)
+-  [Chapter 12：Alignment](#toc_17266_29298_12)
+-  [Chapter 13：Comments](#toc_17266_29298_13)
+-  [Chapter 14：Headers and inclusion](#toc_17266_29298_14)
+-  [Chapter 15：Typedefs](#toc_17266_29298_15)
 
 <span id="toc_17266_29298_1"></span>
 ## Chapter 1: File Encoding
-
+---------------------
 The source code must use the **UTF-8** character encoding. Comments and
 documentation may use non-ASCII characters when required (e.g. Greek letters
 used for units) but code itself is still limited to ASCII characters.
@@ -32,7 +36,7 @@ character is used to break a line and reset to the first column.
 
 <span id="toc_17266_29298_2"></span>
 ## Chapter 2: Language
-
+---------------------
 The primary language for comments and naming must be International English. In
 cases where there is a conflict between the American English and British English
 spellings of a word, the American English spelling is used.
@@ -43,7 +47,7 @@ name should be used as-is.
 
 <span id="toc_17266_29298_3"></span>
 ## Chapter 3: C Language Standard
-
+---------------------
 The C language mode used for TF-A is *GNU99*. This is the "GNU dialect of ISO
 C99", which implies the *ISO C99* standard with GNU extensions.
 
@@ -53,7 +57,7 @@ missing extensions are rarely used, however, and should not pose a problem.
 
 <span id="toc_17266_29298_4"></span>
 ## Chapter 4: MISRA Compliance
-
+---------------------
 TF-A attempts to comply with the [MISRA C:2012 Guidelines](https://www.misra.org.uk/misra-c/).
 Coverity Static Analysis is used to regularly generate a report of current MISRA defects
 and to prevent the addition of new ones.
@@ -70,7 +74,7 @@ comply with them or not. A rationale is given for each deviation.
 
 <span id="toc_17266_29298_5"></span>
 ## Chapter 5: Indentation
-
+---------------------
 Use **tabs** for indentation. The use of spaces for indentation is forbidden
 except in the case where a term is being indented to a boundary that cannot be
 achieved using tabs alone.
@@ -81,7 +85,7 @@ Trailing whitespace is not allowed and must be trimmed.
 
 <span id="toc_17266_29298_6"></span>
 ## Chapter 6: Spacing
-
+---------------------
 Single spacing should be used around most operators, including:
 
 - Arithmetic operators (``+``, ``-``, ``/``, ``*``)
@@ -110,7 +114,7 @@ example illustrates this for an ``if`` statement.
 
 <span id="toc_17266_29298_7"></span>
 ## Chapter 7: Line Length
-
+---------------------
 Line length *should* be at most **80 characters**. This limit does not include
 non-printing characters such as the line feed.
 
@@ -120,7 +124,7 @@ reduced. Use your judgement in these cases.
 
 <span id="toc_17266_29298_8"></span>
 ## Chapter 8: Blank Lines
-
+---------------------
 Functions are usually separated by a single blank line. In certain cases it is
 acceptable to use additional blank lines for clarity, if required.
 
@@ -130,8 +134,7 @@ file.
 
 <span id="toc_17266_29298_9"></span>
 ## Chapter 9: Braces
-
-
+---------------------
 ### Opening Brace Placement
 
 Braces follow the **Kernighan and Ritchie (K&R)** style, where the opening brace
@@ -195,7 +198,7 @@ the program execution will not proceed as intended.
    ```
 <span id="toc_17266_29298_10"></span>
 ## Chapter 10: Naming
-
+---------------------
 ### Functions
 
 Use lowercase for function names, separating multiple words with an underscore
@@ -230,13 +233,13 @@ given below:
 
 Identifiers that are defined using preprocessor macros are written in all
 uppercase text.
-'''
 
+  ``` code c
   #define BUFFER_SIZE_BYTES 64
-
+  ```
 <span id="toc_17266_29298_11"></span>
 ## Chapter 11: Function Attributes
-
+---------------------
 Place any function attributes after the function type and before the function
 name.
 
@@ -246,7 +249,7 @@ name.
 
 <span id="toc_17266_29298_12"></span>
 ## Chapter 12: Alignment
-
+---------------------
 Alignment should be performed primarily with tabs, adding spaces if required to
 achieve a granularity that is smaller than the tab size. For example, with a tab
 size of eight columns it would be necessary to use one tab character and two
@@ -282,7 +285,7 @@ the type of the object.
 
 <span id="toc_17266_29298_13"></span>
 ## Chapter 13: Comments
-
+---------------------
 The general rule for comments is that the double-slash style of comment (``//``)
 is not allowed. Examples of the allowed comment formats are shown below:
    
@@ -296,7 +299,7 @@ is not allowed. Examples of the allowed comment formats are shown below:
    */
    ```
 
-
+  ``` code c
   /**************************************************************************
    * This is the second allowed style for multi-line comments.
    *
@@ -306,46 +309,43 @@ is not allowed. Examples of the allowed comment formats are shown below:
    * This style can be used for additional emphasis.
    *
    *************************************************************************/
-
-'''
-
+  ```
+  ``` code c
   /* Single line comments can use this format */
-
-'''
-
+  ```
+  ``` code c
   /***************************************************************************
    * This alternative single-line comment style can also be used for emphasis.
    **************************************************************************/
-
+  ```
 <span id="toc_17266_29298_14"></span>
 ## Chapter 14: Headers and inclusion
 ---------------------
-
 ### Header guards
 
 For a header file called "some_driver.h" the style used by |TF-A| is:
-'''
 
+  ``` code c
   #ifndef SOME_DRIVER_H
   #define SOME_DRIVER_H
 
   <header content>
 
   #endif /* SOME_DRIVER_H */
-
+  ```
 ### Include statement ordering
 
 All header files that are included by a source file must use the following,
 grouped ordering. This is to improve readability (by making it easier to quickly
 read through the list of headers) and maintainability.
 
-#. *System* includes: Header files from the standard *C* library, such as
+1. *System* includes: Header files from the standard *C* library, such as
    ``stddef.h`` and ``string.h``.
 
-#. *Project* includes: Header files under the ``include/`` directory within
+2. *Project* includes: Header files under the ``include/`` directory within
    |TF-A| are *project* includes.
 
-#. *Platform* includes: Header files relating to a single, specific platform,
+3. *Platform* includes: Header files relating to a single, specific platform,
    and which are located under the ``plat/<platform_name>`` directory within
    |TF-A|, are *platform* includes.
 
@@ -356,8 +356,7 @@ Groups must be separated by a single blank line for clarity.
 
 The example below illustrates the ordering rules using some contrived header
 file names; this type of name reuse should be otherwise avoided.
-'''
-
+  ``` code c
   #include <string.h>
 
   #include <a_dir/example/a_header.h>
@@ -366,7 +365,7 @@ file names; this type of name reuse should be otherwise avoided.
   #include <b_dir/example/a_header.h>
 
   #include "a_header.h"
-
+  ```
 ### Include statement variants
 
 Two variants of the ``#include`` directive are acceptable in the |TF-A|
@@ -382,50 +381,45 @@ is including them, use the ``<...>`` variant.
 
 Example (bl1_fwu.c):
 
-.. code:: c
-
+  ``` code c
   #include <assert.h>
   #include <errno.h>
   #include <string.h>
 
   #include "bl1_private.h"
-
+  ```
 <span id="toc_17266_29298_15"></span>
 ## Chapter 15: Typedefs
-
+---------------------
 ### Avoid anonymous typedefs of structs/enums in headers
 
 For example, the following definition:
-'''
-
+  ``` code c
   typedef struct {
           int arg1;
           int arg2;
   } my_struct_t;
-
+  ```
 
 is better written as:
-'''
-
+  ``` code c
   struct my_struct {
           int arg1;
           int arg2;
   };
-
+  ```
 This allows function declarations in other header files that depend on the
 struct/enum to forward declare the struct/enum instead of including the
 entire header:
-'''
-
+  ``` code c
   struct my_struct;
   void my_func(struct my_struct *arg);
-
+  ```
 instead of:
-'''
-
+  ``` code c
   #include <my_struct.h>
   void my_func(my_struct_t *arg);
-
+  ```
 Some TF definitions use both a struct/enum name **and** a typedef name. This
 is discouraged for new definitions as it makes it difficult for TF to comply
 with MISRA rule 8.3, which states that "All declarations of an object or
@@ -438,8 +432,5 @@ Existing typedefs will be retained for compatibility.
 
 
 
-*Copyright (c) 2020, Arm Limited. All rights reserved.*
 
-[Linux kernel coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html)
-[MISRA C:2012 Guidelines](https://www.misra.org.uk/Activities/MISRAC/tabid/160/Default.aspx)
-[a spreadsheet](https://developer.trustedfirmware.org/file/download/lamajxif3w7c4mpjeoo5/PHID-FILE-fp7c7acszn6vliqomyhn/MISRA-and-TF-Analysis-v1.3.ods)
+*Copyright (c) 2020, Arm Limited. All rights reserved.*
